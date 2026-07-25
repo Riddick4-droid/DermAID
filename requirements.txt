@@ -1,0 +1,32 @@
+# requirements.txt – DermAId Medical AI Agent
+
+# Core ML & vision
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.35.0
+Pillow>=10.0.0
+opencv-python-headless>=4.8.0
+
+# Vector database & embeddings
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+llama-index>=0.10.0
+llama-index-vector-stores-chroma>=0.1.0
+llama-index-embeddings-huggingface>=0.1.0   # your addition
+
+# LLM orchestration
+openai>=1.0.0
+langchain>=0.2.0
+langchain-classic>=0.2.0                  # for langchain_classic imports
+langchain-community>=0.2.0
+langchain-openai>=0.1.0
+
+# Web API
+fastapi>=0.100.0
+uvicorn>=0.22.0
+python-multipart>=0.0.6
+
+# Utilities
+python-dotenv>=1.0.0
+numpy>=1.24.0
+pyyaml>=6.0
