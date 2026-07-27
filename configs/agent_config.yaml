@@ -1,0 +1,49 @@
+# Vision model settings
+vision:
+  model_name: "google/vit-base-patch16-224"
+  num_classes: 10
+  class_labels:
+    - acne vulgaris
+    - actinic keratosis
+    - atopic dermatitis
+    - basal cell carcinoma
+    - melanoma
+    - psoriasis
+    - rosacea
+    - seborrheic keratosis
+    - urticaria
+    - warts
+  confidence_threshold: 0.85
+
+# Knowledge base & Chroma
+kb:
+  collection_name: "derm_kb"
+  persist_directory: "chroma_db/"
+  embedding_model: "all-MiniLM-L6-v2"          # local free model
+  chunk_separator: "\n## "
+
+# LLM orchestrator (OpenAI)
+llm:
+  provider: "openai"
+  model_name: "gpt-3.5-turbo"                  # change to gpt-4o if available
+  temperature: 0.3
+  max_tokens: 1024
+
+# Retrieval
+retrieval:
+  k: 3                                         # top-k chunks per query
+
+# Agent & memory
+agent:
+  session_window_size: 5                       # N past exchanges
+  strictness_default: 0.5                      # 0=infer, 1=verbatim
+  session_dir: "sessions/"
+  strictness_values:
+    infer: 0.0
+    moderate: 0.5
+    verbatim: 1.0
+
+# Video handling
+video:
+  keyframe_method: "laplacian"                 # use Laplacian variance
+  max_keyframes: 1
