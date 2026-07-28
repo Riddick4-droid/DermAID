@@ -47,3 +47,12 @@ agent:
 video:
   keyframe_method: "laplacian"                 # use Laplacian variance
   max_keyframes: 1
+
+# configs/agent_config.yaml (add to existing file)
+parsing:
+  method: "langchain"                 # "landing_ai" or "langchain"
+  chunk_size: 500                     # characters per chunk (langchain)
+  chunk_overlap: 50                   # overlap between chunks (langchain)
+  landing_ai:
+    api_key: ${LANDING_AI_API_KEY}    # set in .env or environment
+    endpoint: "https://api.landing.ai/v1/documents/parse"  # hypothetical
